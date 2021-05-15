@@ -1,0 +1,120 @@
+<body class="body sample_map">
+    <%= render 'layouts/navbar'%>
+    
+    <input type="checkbox" id="icon_timeline">
+    <label for="icon_timeline">
+      <i class="fa fa-bars" id="sidebar_button"></i>
+    </label>
+    
+    
+    <!--map begins -->
+    <div class="sidebar">
+      <!--sidebar begins -->
+      <%= render 'layouts/sidebar'%>
+      <!--sidebar ends -->
+      <div class="container sample_map" id="wm-container">
+        <img src="assets/world-map-satellite.jpg" class="wm" alt="world map" >
+        
+        <i class="fa fa-dot-circle-o icon-5000BCE" id="eu-1-5000BCE" style="font-size:20px"></i>
+        <div class="txtbox txtbox-5000BCE" id="eu-1-5000BCE-text">
+          The earliest current evidence of copper smelting, dating from between 5500 BC and 5000 BC, has been found in Pločnik and Belovode, Serbia.
+        </div>
+        
+        <i class="fa fa-dot-circle-o icon-4800BCE" id="na-1-4800BCE" style="font-size:20px"></i>
+        <div class="txtbox txtbox-4800BCE" id="na-1-4800BCE-text">
+          Evidence of earliest maize cultivation was found in Mexico at around 4800 BCE.
+        </div>
+        
+        <i class="fa fa-dot-circle-o icon-4400BCE" id="af-1-4400BCE" style="font-size:20px"></i>
+        <div class="txtbox txtbox-4400BCE" id="af-1-4400BCE-text">
+          Copper needle exhumed in Egypt dates back to around 4400 BCE.
+        </div>
+        
+        <i class="fa fa-dot-circle-o icon-4200BCE" id="as-1-4200BCE" style="font-size:20px"></i>
+        <div class="txtbox txtbox-4200BCE" id="as-1-4200BCE-text">
+          Buffaloes were domesticated in China at around 4200 BCE.
+        </div>
+        
+      </div>
+    </div>
+    <!--map ends -->
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() 
+      {
+        $(".hidden-checkbox : checked").parents().css({"color": "red", "border": "2px solid red"});
+      }
+      );
+    
+      var scale = 1,
+      panning = false,
+      xoff = 0,
+      yoff = 0,
+      start = {x: 0, y: 0},
+      doc = document.getElementById("wm-container");
+      
+      function setTransform() {
+        doc.style.transform = "translate(" + xoff + "px, " + yoff + "px) scale(" + scale + ")";
+      }
+      
+      doc.onmousedown = function(e) {
+        e.preventDefault();
+        
+        start = {x: e.clientX - xoff, y: e.clientY - yoff};
+        panning = true;
+      }
+      
+      doc.onmouseup = function(e) {
+        panning = false;
+      }
+      
+      doc.onmousemove = function(e) {
+        e.preventDefault();         
+        if (!panning) {
+          return;
+        }
+        xoff = (e.clientX - start.x);
+        yoff = (e.clientY - start.y);
+        setTransform();
+      }
+      
+      doc.onwheel = function(e) {
+        e.preventDefault();
+        // take the scale into account with the offset
+        
+        
+        var xs = (e.clientX - xoff) / scale,
+          ys = (e.clientY - yoff) / scale,
+          delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY),
+          xtemp = xoff,
+          ytemp = yoff;
+    
+        
+        // get scroll direction & set zoom level
+        (delta > 0) ? (scale *= 1.2) : (scale /= 1.2);
+        
+        // reverse the offset amount with the new scale
+        xoff = e.clientX - xs * scale;
+        yoff = e.clientY - ys * scale;
+        
+        if (scale < 1)
+        {
+          scale = 1;
+          xoff = xtemp;
+          yoff = ytemp;
+          return;
+        }
+        if (scale > 8)
+        {
+          scale = 8;
+          xoff = xtemp;
+          yoff = ytemp;
+          return;
+        }
+        
+        setTransform();          
+      }
+    </script>
+</body>

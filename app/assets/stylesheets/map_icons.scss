@@ -1,0 +1,96 @@
+/* map icons */
+
+/* general settings*/
+.container.sample_map .txtbox {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-weight: bold;
+
+  width:  15vw;
+  color: #F35C5C ;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+.fa.fa-dot-circle-o {
+  height: 0;
+  color: #FFB900;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: 1s;
+}
+
+.fa.fa-dot-circle-o:hover {
+  cursor: default;
+  transform: scale(2);
+  opacity: 1;
+}
+
+/* individual settings */
+
+#eu-1-5000BCE {
+  top: 44.3%;
+  left: 55.3%;
+}
+
+#eu-1-5000BCE-text {
+  top: 44.3%;
+  left: 60.3%;
+}
+
+#eu-1-5000BCE:hover ~ #eu-1-5000BCE-text{
+  height: auto;
+  opacity: 1;
+}
+
+
+#na-1-4800BCE {
+  top: 56.3%;
+  left: 20.3%;
+}
+
+#na-1-4800BCE-text {
+  top: 54.3%;
+  left: 25.3%;
+}
+
+#na-1-4800BCE:hover ~ #na-1-4800BCE-text{
+  height: auto;
+  opacity: 1;
+}
+
+
+#af-1-4400BCE {
+  color: red;
+  top: 54.3%;
+  left: 58.3%;
+}
+
+#af-1-4400BCE-text {
+  top: 54.3%;
+  left: 63.3%;
+}
+
+#af-1-4400BCE:hover ~ #af-1-4400BCE-text{
+  height: auto;
+  opacity: 1;
+}
+
+
+#as-1-4200BCE {
+  color: grey;
+  top: 52.3%;
+  left: 82.3%;
+}
+
+#as-1-4200BCE-text {
+  top: 44.3%;
+  left: 77.3%;
+}
+
+#as-1-4200BCE:hover ~ #as-1-4200BCE-text{
+  height: auto;
+  opacity: 1;
+}

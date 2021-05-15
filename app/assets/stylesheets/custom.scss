@@ -1,10 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 
 /* universal */
 
+html {
+  height: 100%; 
+}
+
 body {
-  padding-top: 60px;
+  height: 100%;
 }
 
 section {
@@ -50,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  color: white;
   font-size: 4em;
   letter-spacing: -2px;
   margin-top: 120px;
@@ -73,18 +79,43 @@ p {
 }
 
 .guest_btn {
-  position: relative;
+  position: absolute;
   margin-top: 60px;
-  left: 42%;
+  left: 45%;
+}
+
+.container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  
+  margin: 0;
+  top: 8%;
+}
+
+/* navbar properties */
+header {
+  position: absolute;
+  height: 8%;
+}
+
+header .navbar {
+  width: 100%;
+  height: 100%;
 }
 
 /* logo hover effects */
 
 .navbar_left {
-  position: absolute;
-  top: 50%;
-  left: 7%;
-  transform: translateX(-50%) translateY(-50%);
+  position: fixed;
+  top: -0.2%;
+  left: 3%;
+}
+
+nav .navbar-nav.navbar-right{
+  position: fixed;
+  top: 1%;
+  right: 3%;
 }
 
 li {
@@ -127,16 +158,18 @@ li a {
   
   font-size: 1.5em;
   color: yellow;
+  animation: none;
 }
 
-.signup_btn__image {
+.signup_btn__image .globe-image {
+  mix-blend-mode: multiply;
   display: block;
-  transition: 0.5s;
+  transition: background .5s;
 }
 
-.signup_btn__image:hover {
-  transform: scale(1.2);
-  transition: 0.5s;
+.signup_btn__image:hover .globe-image{
+  mix-blend-mode: multiply;
+  transform: scale(1.12);
 }
 
 .signup_btn__overlay {
@@ -171,3 +204,73 @@ li a {
 .signup_btn__title {
   font-weight: bold;
 }
+
+.container .contents h1 {
+  font-family: 'Homemade Apple', cursive;
+  color: #EBFF6A;
+}
+
+.container .contents h2 {
+    color: white;
+    font-weight: 100;
+}
+
+
+/*page transition effects*/
+.container.sample_map {
+  animation: transitionIn 2s;
+}
+
+.container .contents h1, h2 {
+  animation: transitionIn 2s ease-in-out;
+}
+
+.guest_btn {
+  animation: transitionIn 2s ease-in-out;
+}
+
+.container.signup_btn {
+  animation: transitionIn_globe-image 2s;
+}
+
+@keyframes transitionIn {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes transitionIn_globe-image {
+  0% {
+    opacity: 0;
+    mix-blend-mode: multiply;
+  }
+  
+  99.99%
+  {
+    opacity: 0;
+    mix-blend-mode: multiply;
+  }
+  
+  100% {
+    opacity: 1;
+    mix-blend-mode: multiply;
+  }
+}
+
+/*zoom effects*/
+
+#wm {
+  
+  width: 100%;
+  height: 100%;
+  transform-origin: 0px 0px;
+  transform: scale(1) translate(0px, 0px);
+}
+

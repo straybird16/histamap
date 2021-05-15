@@ -1,25 +1,31 @@
-<div class="home center content">
-  <h1>Welcome to Histamap!</h1>
-
-  <h2>
-    Explore the everlasting extention of human history on an interactive world map!
-  </h2>
-
-  <div class="signup_btn" style="width:200px;height:200px;">
-    <a class="signup_btn__image" href="#">
-      <img src="assets/globe.jpg" alt="globe image" style="width:200px;height:200px;">
-      
-      <div class="signup_btn__overlay">
-        <div class="signup_btn__title">
-          Sign up now!
-        </div>
+<body class="body-home">
+  <%= render 'layouts/navbar' %>
+    
+  <div class="container">
+    <div class ="contents">
+      <h1>Welcome to Histamap!</h1>
+    
+      <h2>
+        Explore the everlasting extention of human history on an interactive world map!
+      </h2>
+    
+      <div class="container signup_btn" style="width:200px;height:200px;">
+        <a class="signup_btn__image" href="#">
+          <img class="globe-image" id="image_globe" src="assets/globe.jpg" alt="globe image" style="width:200px;height:200px;">
+          
+          <div class="signup_btn__overlay">
+            <div class="signup_btn__title">
+              Sign up now!
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
+  
+      <div class="guest_btn">
+              <%= link_to "Continue as guest", sample_map_path, class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="guest_btn">
-        <%= link_to "Continue as guest", sample_map_path, class: "btn btn-lg btn-primary" %>
-</div>
+</body>
 
 

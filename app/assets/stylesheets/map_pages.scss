@@ -1,3 +1,209 @@
-// Place all the styles related to the StaticPages controller here.
+// Place all the styles related to the MapPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*sample_map*/
+
+.left-area-background {
+  z-index: 80;
+  position: absolute;
+  width: 8%;
+  height: 100%;
+  background-color: black;
+}
+
+.body.sample_map {
+  background-color: black;
+  background-size: cover;
+  overflow: auto;
+  }
+
+.container.sample_map {
+  position: fixed;
+  transform-origin: 0px 0px;
+  transform: scale(1) translate(0px, 0px);
+  cursor: grab;
+  left: 8%;
+  
+  transition: left 0.8s ease-in-out;
+}
+
+.container.sample_map:active {
+  cursor: grabbing;
+}
+
+.container.sample_map img {
+  width: 100%;
+  height: auto;
+}
+
+/*homepage*/
+
+.body-home {
+  background-image: 
+    linear-gradient(#EAEAEA, #080808),
+    url("worldmap-vintage.jpg");
+    
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.body-home .container {
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.body-home .contents {
+  margin-top: 20vh;
+}
+
+
+.sidebar {
+  position: fixed;
+  background: #151515;
+  left: 0;
+  height: 100%;
+  width: 8%;
+  
+  top: 8%;
+  z-index: 100;
+  transition: left 0.8s ease-in-out;
+}
+
+.fa.fa-sort-down {
+  font-size: 12px;
+  position: absolute;
+  left: 24px;
+}
+
+
+
+
+label #sidebar_button {
+  opacity: .8;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 2.3%;
+  left: 1.5%;
+  z-index: 2000;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+label #sidebar_button:hover {
+  color: teal;
+}
+
+#icon_timeline:checked ~ .sidebar {
+  left: -8%;
+}
+
+#icon_timeline:checked ~ .sidebar .container.sample_map {
+  left: 0%;
+}
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.sidebar label {
+  cursor: pointer;
+  font-weight: 100;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  
+  transition: background 0.3s;
+}
+
+.sidebar label:hover {
+  background-color: teal;
+}
+
+.sidebar label button{
+  width: 100%;
+}
+
+.sidebar .sublabel {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0%;
+  overflow: hidden;
+  display: block;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.sidebar p {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 0%;
+  display: block;
+  overflow: hidden;
+}
+
+.sidebar .sublabel p {
+  transform: translate(5%, 0);
+}
+
+
+#button_timeline_5000BCE:checked ~ .sublabel-5000BCE {
+  padding: 5px;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+
+#button_timeline_5000BCE:checked ~ .container.sample_map .icon-5000BCE{
+  height: auto;
+  opacity: 1;
+}
+
+
+#button_timeline_4800BCE:checked ~ .container.sample_map .icon-4800BCE {
+  height: auto;
+  opacity: 1;
+}
+
+#button_timeline_4400BCE:checked ~ .container.sample_map .icon-4400BCE {
+  height: auto;
+  opacity: 1;
+}
+
+#button_timeline_4200BCE:checked ~ .container.sample_map .icon-4200BCE {
+  height: auto;
+  opacity: 1;
+}
+
+#button_timeline_4000BCE:checked ~ .sublabel-4000BCE {
+  padding: 5px;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+
+#button_timeline_4000BCE:checked ~ .container.sample_map .icon-4000BCE{
+  height: auto;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+.container.sample_map {
+  z-index: -10;
+}
+
+
+
