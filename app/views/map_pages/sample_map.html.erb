@@ -8,32 +8,14 @@
     
     
     <!--map begins -->
-    <div class="sidebar">
+    <div class="sidebar sample_map">
       <!--sidebar begins -->
       <%= render 'layouts/sidebar'%>
       <!--sidebar ends -->
       <div class="container sample_map" id="wm-container">
         <img src="https://www.mapsinternational.com/pub/media/catalog/product/cache/4d506f310d873d4f29c897e0076bed55/s/a/satellite-map-of-the-world_wm00875.jpg" class="wm" alt="world map" >
         
-        <i class="fa fa-dot-circle-o icon-5000BCE" id="eu-1-5000BCE" style="font-size:20px"></i>
-        <div class="txtbox txtbox-5000BCE" id="eu-1-5000BCE-text">
-          The earliest current evidence of copper smelting, dating from between 5500 BC and 5000 BC, has been found in Pločnik and Belovode, Serbia.
-        </div>
-        
-        <i class="fa fa-dot-circle-o icon-4800BCE" id="na-1-4800BCE" style="font-size:20px"></i>
-        <div class="txtbox txtbox-4800BCE" id="na-1-4800BCE-text">
-          Evidence of earliest maize cultivation was found in Mexico at around 4800 BCE.
-        </div>
-        
-        <i class="fa fa-dot-circle-o icon-4400BCE" id="af-1-4400BCE" style="font-size:20px"></i>
-        <div class="txtbox txtbox-4400BCE" id="af-1-4400BCE-text">
-          Copper needle exhumed in Egypt dates back to around 4400 BCE.
-        </div>
-        
-        <i class="fa fa-dot-circle-o icon-4200BCE" id="as-1-4200BCE" style="font-size:20px"></i>
-        <div class="txtbox txtbox-4200BCE" id="as-1-4200BCE-text">
-          Buffaloes were domesticated in China at around 4200 BCE.
-        </div>
+        <%= render 'layouts/map-icons'%>
         
       </div>
     </div>
@@ -42,12 +24,23 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-      $(document).ready(function() 
-      {
-        $(".hidden-checkbox : checked").parents().css({"color": "red", "border": "2px solid red"});
+     
+      
+      function uncheck_other_main_label(id) {
+        var arr = document.getElementsByClassName("sidebar sample_map")[0].getElementsByClassName("hidden-checkbox");
+        var current = document.getElementById(id);
+        
+        if (current.checked == true) {
+          for (var i = 0; i < arr.length; i++)
+          {
+            var traverse = arr[i]; 
+            if (traverse != current ) {
+              traverse.checked = false;
+            }
+          }
+        } 
       }
-      );
-    
+      
       var scale = 1,
       panning = false,
       xoff = 0,

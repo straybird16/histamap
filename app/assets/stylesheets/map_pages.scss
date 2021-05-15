@@ -111,7 +111,7 @@ label #sidebar_button:hover {
 }
 
 
-.sidebar label {
+.sidebar.sample_map label {
   cursor: pointer;
   font-weight: 100;
   color: white;
@@ -122,15 +122,15 @@ label #sidebar_button:hover {
   transition: background 0.3s;
 }
 
-.sidebar label:hover {
+.sidebar.sample_map label:hover {
   background-color: teal;
 }
 
-.sidebar label button{
+.sidebar.sample_map label button{
   width: 100%;
 }
 
-.sidebar .sublabel {
+.sidebar.sample_map .sublabel {
   margin: 0;
   padding: 0;
   opacity: 0;
@@ -140,7 +140,7 @@ label #sidebar_button:hover {
   transition: opacity 0.8s ease-in-out;
 }
 
-.sidebar p {
+.sidebar.sample_map p {
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -149,10 +149,13 @@ label #sidebar_button:hover {
   overflow: hidden;
 }
 
-.sidebar .sublabel p {
+.sidebar.sample_map .sublabel p {
   transform: translate(5%, 0);
 }
 
+.hidden-checkbox:checked + label {
+  color: pink;
+}
 
 #button_timeline_5000BCE:checked ~ .sublabel-5000BCE {
   padding: 5px;
@@ -194,6 +197,32 @@ label #sidebar_button:hover {
   opacity: 1;
 }
 
+#button_timeline_3700BCE:checked ~ .container.sample_map .icon-3700BCE{
+  height: auto;
+  opacity: 1;
+}
+
+
+#button_timeline_3000BCE:checked ~ .sublabel-3000BCE {
+  padding: 5px;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+
+#button_timeline_2000BCE:checked ~ .sublabel-2000BCE {
+  padding: 5px;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+
+#button_timeline_1000BCE:checked ~ .sublabel-1000BCE {
+  padding: 5px;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
 
 
 
