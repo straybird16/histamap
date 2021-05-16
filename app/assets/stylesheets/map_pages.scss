@@ -18,7 +18,7 @@
   overflow: auto;
   }
 
-.container.sample_map {
+.sample_map .container {
   position: fixed;
   transform-origin: 0px 0px;
   transform: scale(1) translate(0px, 0px);
@@ -28,11 +28,11 @@
   transition: left 0.8s ease-in-out;
 }
 
-.container.sample_map:active {
+.sample_map .container:active {
   cursor: grabbing;
 }
 
-.container.sample_map img {
+.sample_map .container img {
   width: 100%;
   height: auto;
 }
@@ -78,7 +78,7 @@
   left: 24px;
 }
 
-
+/* sidebar */
 
 
 label #sidebar_button {
@@ -97,11 +97,11 @@ label #sidebar_button:hover {
   color: teal;
 }
 
-#icon_timeline:checked ~ .sidebar {
+#icon_timeline:checked ~ .sample_map .sidebar {
   left: -8%;
 }
 
-#icon_timeline:checked ~ .sidebar .container.sample_map {
+#icon_timeline:checked ~ .sample_map .container {
   left: 0%;
 }
 
@@ -111,7 +111,7 @@ label #sidebar_button:hover {
 }
 
 
-.sidebar.sample_map label {
+.sidebar label {
   cursor: pointer;
   font-weight: 100;
   color: white;
@@ -122,15 +122,15 @@ label #sidebar_button:hover {
   transition: background 0.3s;
 }
 
-.sidebar.sample_map label:hover {
+.sidebar label:hover {
   background-color: teal;
 }
 
-.sidebar.sample_map label button{
+.sidebar label button{
   width: 100%;
 }
 
-.sidebar.sample_map .sublabel {
+.sidebar .sublabel {
   margin: 0;
   padding: 0;
   opacity: 0;
@@ -140,7 +140,7 @@ label #sidebar_button:hover {
   transition: opacity 0.8s ease-in-out;
 }
 
-.sidebar.sample_map p {
+.sidebar p {
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -149,7 +149,7 @@ label #sidebar_button:hover {
   overflow: hidden;
 }
 
-.sidebar.sample_map .sublabel p {
+.sidebar .sublabel p {
   transform: translate(5%, 0);
 }
 
@@ -164,44 +164,12 @@ label #sidebar_button:hover {
   opacity: 1;
 }
 
-#button_timeline_5000BCE:checked ~ .container.sample_map .icon-5000BCE{
-  height: auto;
-  opacity: 1;
-}
-
-
-#button_timeline_4800BCE:checked ~ .container.sample_map .icon-4800BCE {
-  height: auto;
-  opacity: 1;
-}
-
-#button_timeline_4400BCE:checked ~ .container.sample_map .icon-4400BCE {
-  height: auto;
-  opacity: 1;
-}
-
-#button_timeline_4200BCE:checked ~ .container.sample_map .icon-4200BCE {
-  height: auto;
-  opacity: 1;
-}
-
 #button_timeline_4000BCE:checked ~ .sublabel-4000BCE {
   padding: 5px;
   height: auto;
   overflow: hidden;
   opacity: 1;
 }
-
-#button_timeline_4000BCE:checked ~ .container.sample_map .icon-4000BCE{
-  height: auto;
-  opacity: 1;
-}
-
-#button_timeline_3700BCE:checked ~ .container.sample_map .icon-3700BCE{
-  height: auto;
-  opacity: 1;
-}
-
 
 #button_timeline_3000BCE:checked ~ .sublabel-3000BCE {
   padding: 5px;
@@ -223,9 +191,6 @@ label #sidebar_button:hover {
   overflow: hidden;
   opacity: 1;
 }
-
-
-
 
 
 

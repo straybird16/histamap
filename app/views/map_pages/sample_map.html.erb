@@ -8,11 +8,14 @@
     
     
     <!--map begins -->
-    <div class="sidebar sample_map">
+    <div class="sample_map">
       <!--sidebar begins -->
-      <%= render 'layouts/sidebar'%>
+      <div class = "sidebar">
+        <%= render 'layouts/sidebar'%>
+      </div>
+      
       <!--sidebar ends -->
-      <div class="container sample_map" id="wm-container">
+      <div class="container" id="wm-container">
         <img src="https://www.mapsinternational.com/pub/media/catalog/product/cache/4d506f310d873d4f29c897e0076bed55/s/a/satellite-map-of-the-world_wm00875.jpg" class="wm" alt="world map" >
         
         <%= render 'layouts/map-icons'%>
@@ -24,10 +27,80 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-     
       
-      function uncheck_other_main_label(id) {
-        var arr = document.getElementsByClassName("sidebar sample_map")[0].getElementsByClassName("hidden-checkbox");
+      function timelineCbParent(time) {
+        uncheck_other_main_label(time);
+        timeline_display_icon(time);
+        checkIcons(time);
+      }
+      
+      function timelineCb(time) {
+        timeline_display_icon(time);
+      }
+      
+      function checkIcons(time) {
+        var id = "button_timeline_" + time;
+        var currentCb = document.getElementById(id);
+        
+        var icon_string = "icon-" + time;
+        var currentIcons = document.getElementsByClassName(icon_string);
+        var all = document.getElementsByClassName("map-icon");
+        
+        if (currentCb.checked)
+        {
+          for (var i = 0; i < all.length; i++)
+          {
+            var traverse = all[i];
+            if (!traverse.classList.contains(icon_string))
+            {
+              traverse.style.opacity = 0;
+              traverse.style.height = 0;
+            }
+          }
+        }
+        if (!currentCb.checked)
+        {
+          for (var i = 0; i < all.length; i++)
+          {
+            var traverse = all[i];
+            
+            traverse.style.opacity = 0;
+            traverse.style.height = 0;
+            
+          }
+        }
+      }
+      
+      function timeline_display_icon(time) {
+        var current_string = "button_timeline_" + time;
+        var icons_string = "icon-" + time;
+        var current = document.getElementById(current_string);
+        var icons = document.getElementsByClassName(icons_string);
+        
+        if (current.checked == true) 
+        {
+          for (var i = 0; i < icons.length; i++)
+          {
+            var traverse = icons[i];
+            traverse.style.opacity = 1;
+            traverse.style.height = "auto";
+          }
+        }
+        else
+        {
+          for (var i = 0; i < icons.length; i++)
+          {
+            var traverse = icons[i];
+            traverse.style.opacity = 0;
+            traverse.style.height = 0;
+          }
+        }
+        
+      }
+      
+      function uncheck_other_main_label(time) {
+        var id = "button_timeline_" + time;
+        var arr = document.getElementsByClassName("sample_map")[0].getElementsByClassName("hidden-checkbox");
         var current = document.getElementById(id);
         
         if (current.checked == true) {
@@ -68,8 +141,17 @@
         if (!panning) {
           return;
         }
-        xoff = (e.clientX - start.x);
-        yoff = (e.clientY - start.y);
+        var topDistance = doc.offsetTop;
+        var bottomDistance = doc.offsetBottom;
+        var leftDistance = doc.offsetLeft;
+        var rightDistance = doc.offsetRight;
+        
+        var xoff_temp = (e.clientX - start.x);
+        var yoff_temp = (e.clientY - start.y);
+        
+
+        xoff = xoff_temp;
+        yoff = yoff_temp;
         setTransform();
       }
       
