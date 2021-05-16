@@ -13,7 +13,7 @@ body {
 }
 
 section {
-  overflow: auto;
+  overflow: normal;
 }
 
 textarea {
@@ -78,12 +78,6 @@ p {
   line-height: 1.7em;
 }
 
-.guest_btn {
-  position: absolute;
-  margin-top: 60px;
-  left: 45%;
-}
-
 .container {
   padding: 0;
   width: 100%;
@@ -145,12 +139,34 @@ li a {
   transition: width 0.3s;
 }
 
+/*homepage*/
+
+
+.body-home .container {
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  
+  background-image: 
+    linear-gradient(#EAEAEA, #080808),
+    url("https://wallpapercave.com/wp/wp4712900.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  overflow: normal;
+}
+
 /* sign up image hover effects */
 
 .signup_btn {
-  position: relative;
+  display: block;
+  position: absolute;
+  top: 43%;
+  left: 44.7%;
+  
   width: 100;
   height: 100;
+  
   
   margin-left: auto;
   margin-right: auto;
@@ -158,7 +174,6 @@ li a {
   
   font-size: 1.5em;
   color: yellow;
-  animation: none;
 }
 
 .signup_btn__image .globe-image {
@@ -205,27 +220,35 @@ li a {
   font-weight: bold;
 }
 
-.container .contents h1 {
+.body-home .container h1 {
+  padding-top: 3%;
   font-family: 'Homemade Apple', cursive;
   color: #EBFF6A;
 }
 
-.container .contents h2 {
-    color: white;
-    font-weight: 100;
+.body-home .container h2 {
+  margin-top: 4%;
+  color: white;
+  font-weight: 100;
 }
 
+.guest_btn {
+  position: absolute;
+  margin-top: 60px;
+  top: 62%;
+  left: 45%;
+}
 
 /*page transition effects*/
 .sample_map .container {
   animation: transitionIn 2s;
 }
 
-.container .contents h1, h2 {
+.body-home .container h1, h2 {
   animation: transitionIn 2s ease-in-out;
 }
 
-.guest_btn {
+.body-home .guest_btn {
   animation: transitionIn 2s ease-in-out;
 }
 

@@ -37,28 +37,6 @@
   height: auto;
 }
 
-/*homepage*/
-
-.body-home {
-  background-image: 
-    linear-gradient(#EAEAEA, #080808),
-    url("https://wallpapercave.com/wp/wp4712900.jpg");
-    
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.body-home .container {
-  padding: 0;
-  margin: auto;
-  overflow: hidden;
-}
-
-.body-home .contents {
-  margin-top: 20vh;
-}
-
 
 .sidebar {
   position: fixed;
