@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the first website that I tried to develop. The concept is to visualize the human history from a geographical point of view, through the timeline divided into sub-timelines.
 
-Things you may want to cover:
+* Mostly realized by HTML, CSS, and JavaScript and Ruby
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Was a great experience in terms of designing a website/project from scratch and working alone
